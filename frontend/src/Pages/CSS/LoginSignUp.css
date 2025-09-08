@@ -1,0 +1,307 @@
+/* 🍊 Sweet-Themed Login / SignUp - Orange Glow */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: linear-gradient(135deg, #fff5f2, #ffe1c7, #ffd6a5);
+  background-size: 300% 300%;
+  animation: orangeBG 12s ease infinite;
+
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+@keyframes orangeBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Auth Box */
+.auth-box {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(255, 126, 95, 0.25);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInUp 0.7s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 126, 95, 0.25);
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.auth-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Inputs */
+.auth-input {
+  width: 92%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ffd6b5;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fffaf6;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 6px rgba(255, 174, 116, 0.08);
+}
+
+.auth-input::placeholder {
+  color: #b5a89b;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #ff9f66;
+  box-shadow: 0 0 8px rgba(255, 159, 102, 0.4);
+  background: #fff;
+}
+
+/* Password with eye toggle */
+.password-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.password-container .auth-input {
+  width: 83%;
+  padding-right: 50px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 45%;
+  transform: translateY(-65%);
+  width: 26px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+
+.eye-icon:hover { opacity: 1; }
+
+/* Buttons */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(255, 126, 95, 0.35);
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(255, 126, 95, 0.45);
+}
+
+/* Shiny hover effect */
+.auth-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75px;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+
+.auth-btn:hover::after {
+  left: 120%;
+}
+
+.auth-btn.small {
+  width: auto;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+/* Messages */
+.auth-message {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #d64532;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Links */
+.auth-toggle {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.auth-toggle span {
+  color: #ff7e5f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-toggle span:hover { text-decoration: underline; }
+
+/* OTP container */
+.otp-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.otp-input {
+  width: 100%;
+  padding-right: 95px;
+  box-sizing: border-box;
+}
+
+.resend-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-70%);
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 126, 95, 0.3);
+}
+
+.resend-btn:hover {
+  background: linear-gradient(135deg, #fd9d52, #ff6a3d);
+  transform: translateY(-70%) scale(1.05);
+}
+
+/* Forgot password link */
+.forgot-link {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+  color: #ff7e5f;
+  text-decoration: underline;
+}
+
+/* 🍊 Sweet-Themed Login / SignUp - Orange Glow */
+/* (your existing code above stays unchanged) */
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .auth-box {
+    padding: 28px;
+    max-width: 90%;
+  }
+
+  .auth-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+
+  .auth-input,
+  .password-container .auth-input {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+
+  .auth-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .eye-icon {
+    width: 22px;
+    height: 20px;
+    right: 10px;
+  }
+
+  .resend-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 12px;
+  }
+
+  .auth-box {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+
+  .auth-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .auth-input,
+  .password-container .auth-input {
+    width: 90%;
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .auth-btn {
+    font-size: 0.95rem;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .auth-toggle {
+    font-size: 0.85rem;
+  }
+
+  .forgot-link {
+    font-size: 0.8rem;
+  }
+
+  .eye-icon {
+    width: 20px;
+    height: 25px;
+    right: 18px;
+  }
+}

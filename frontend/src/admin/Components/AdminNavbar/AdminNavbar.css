@@ -1,0 +1,215 @@
+.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.25s ease;
+}
+
+.admin-navbar:hover {
+  transform: scale(1.01);
+}
+
+.admin-logo-link {
+  color: #feb47b;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+
+.admin-logo-link:hover {
+  color: #ff7e5f;
+}
+
+
+/* Left */
+.admin-navbar h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #feb47b;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+/* Center (desktop default) */
+.admin-nav-links {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-nav-links li {
+  position: relative;
+}
+
+.admin-nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.admin-nav-links a:hover {
+  background: rgba(255, 126, 95, 0.15);
+  color: #ff7e5f;
+}
+
+.admin-nav-links a.active {
+  background: rgba(255, 126, 95, 0.25);
+  color: #feb47b;
+  font-weight: 600;
+}
+
+/* Right */
+.admin-right-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-logout-btn {
+  background: #ff7e5f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-logout-btn:hover {
+  background: #feb47b;
+  color: #2d3436;
+}
+
+/* Hamburger */
+.admin-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.admin-hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.admin-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.admin-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.admin-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.admin-account-icon {
+  background: rgba(255, 180, 123, 0.15); /* soft background */
+  border: none;
+  color: #feb47b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;   /* ≈32px icon */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%; /* circular */
+  transition: all 0.3s ease;
+}
+
+.admin-account-icon:hover {
+  background: rgba(255, 126, 95, 0.25);
+  color: #ff7e5f;
+  transform: scale(1.1);
+}
+
+
+/* 🔥 Mobile Style copied from Customer Navbar */
+@media (max-width: 768px) {
+  .admin-nav-links {
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    background: #2d3436;   /* dark background for admin */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    padding: 12px;
+    flex-direction: column;
+    gap: 12px;
+    width: 180px;
+    z-index: 2000;
+
+    display: flex;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .admin-nav-links.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .admin-hamburger {
+    display: flex;
+  }
+
+  /* Links inside mobile dropdown */
+  .admin-nav-links a {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    color: #fff;
+  }
+
+  .admin-nav-links a:hover {
+    background: rgba(255, 126, 95, 0.25);
+    color: #feb47b;
+  }
+
+  .admin-nav-links li:last-child .admin-logout-btn {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: center;
+  }
+
+  .admin-nav-links li:last-child .admin-logout-btn:hover {
+    background: #feb47b;
+    color: #2d3436;
+  }
+}

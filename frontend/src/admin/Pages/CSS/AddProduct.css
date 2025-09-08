@@ -1,0 +1,221 @@
+/* 🌙 AddProduct.css - Dark Theme Matching Admin Login */
+.admin-add-product-container{
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+.admin-add-product {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 16px;
+  background: rgba(30, 30, 30, 0.92);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeInUp 0.6s ease;
+}
+
+.admin-add-product h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #feb47b;
+}
+
+.admin-add-product form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs */
+.admin-add-product input[type="text"],
+.admin-add-product input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-add-product input::placeholder {
+  color: #aaa;
+}
+
+.admin-add-product input:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* Product Name Input - make it smaller */
+.product-name-input {
+  max-width: 94%;
+  margin: 0 -0px;     /* center it */
+  display: block;     /* ensures centering works */
+}
+
+
+/* File Upload Button */
+.custom-file-upload {
+  display: inline-block;
+  padding: 12px 15px;
+  background: #ff7e5f;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.custom-file-upload:hover {
+  background: #feb47b;
+  color: #2d3436;
+}
+
+/* Image Preview */
+.image-preview {
+  margin-top: 10px;
+  max-width: 140px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  display: block;
+}
+
+/* Section Headings */
+.admin-add-product h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ff9a5f;
+}
+
+/* Sizes row */
+.size-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.size-row input {
+  flex: 1;
+}
+
+/* Add Size Button */
+.add-size-btn {
+  background: #333;
+  color: #feb47b;
+  padding: 10px 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-size-btn:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* Save Button */
+.save-btn {
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+}
+
+/* Status Messages */
+.status-message {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.status-message.success {
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.status-message.error {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Category Dropdown */
+.admin-add-product select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  appearance: none; /* removes default arrow */
+  cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a custom dropdown arrow */
+.admin-add-product select {
+  background-image: linear-gradient(45deg, transparent 50%, #ff7e5f 50%),
+    linear-gradient(135deg, #ff7e5f 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 4px),
+    calc(100% - 12px) calc(50% - 4px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* On hover */
+.admin-add-product select:hover {
+  border-color: #ff7e5f;
+}
+
+/* On focus */
+.admin-add-product select:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}

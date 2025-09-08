@@ -1,0 +1,19 @@
+name: Ping Render backend
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST to /api/ping (with retries and longer timeout)
+        run: |
+          set -e
+          echo "Pinging https://ecommerce-backend-sayr.onrender.com/api/ping"
+          # try with verbose output so you can see what's happening in logs
+          curl -v -X POST --retry 3 --retry-delay 5 --max-time 60 -fsS "https://ecommerce-backend-sayr.onrender.com/api/ping" \
+            -H "Content-Type: application/json" \
+            -d '{}'

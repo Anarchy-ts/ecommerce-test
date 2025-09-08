@@ -1,0 +1,144 @@
+/* 🌙 PromoCodes.css - Dark Theme Matching ExistingProducts */
+.promo-codes {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+}
+
+/* Heading */
+.promo-codes h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #feb47b;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* List of Promos */
+.promo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 30px;
+}
+
+.promo-item {
+  background: rgba(30, 30, 30, 0.92);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  animation: fadeInUp 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.promo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.8);
+}
+
+.promo-item span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+/* Delete Button */
+.promo-item button {
+  background: #333;
+  color: #e74c3c;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.promo-item button:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* Add Promo Section */
+.promo-codes h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ff9a5f;
+  margin-bottom: 14px;
+}
+
+.add-promo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  justify-content: center;
+}
+
+.add-promo input,
+.add-promo select {
+  padding: 12px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+  min-width: 120px;
+  flex: 1;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-promo input:focus,
+.add-promo select:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* Add Button */
+.add-promo button {
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-promo button:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar Styling */
+.promo-codes::-webkit-scrollbar { width: 8px; }
+.promo-codes::-webkit-scrollbar-track { background: #1e1e1e; }
+.promo-codes::-webkit-scrollbar-thumb { background: #444; border-radius: 6px; }
+.promo-codes::-webkit-scrollbar-thumb:hover { background: #666; }
+
+/* Small screens */
+@media (max-width: 480px) {
+  .add-promo { flex-direction: column; }
+}

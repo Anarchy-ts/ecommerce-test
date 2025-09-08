@@ -1,0 +1,224 @@
+/* 🌙 DeliverableAddress.css - Dark Theme Matching ExistingProducts */
+.deliverable-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+}
+
+/* Heading */
+.deliverable-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #feb47b;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Add Button */
+.deliverable-container > button {
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.deliverable-container > button:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+}
+
+/* -------- Form -------- */
+.area-form {
+  width: min(600px, 95%);
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeInUp 0.4s ease;
+  color: #f1f1f1;
+}
+
+.area-form input {
+  padding: 12px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.area-form input:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* Mini Google Map */
+.area-form > div[ref] {
+  border: 1px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+/* Form buttons */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.form-buttons button {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+/* Save / Update */
+.form-buttons button[type="submit"] {
+  background: #ff7e5f;
+  color: #fff;
+  border: none;
+}
+
+.form-buttons button[type="submit"]:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+}
+
+/* Cancel */
+.form-buttons button[type="button"] {
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.form-buttons button[type="button"]:hover {
+  background: #444;
+  color: #feb47b;
+}
+
+/* -------- Area List -------- */
+.area-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  /* remove bullets + padding */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.area-item {
+  background: rgba(30, 30, 30, 0.92);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeInUp 0.6s ease;
+  color: #f1f1f1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.area-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.75), 0 0 10px rgba(255, 126, 95, 0.5);
+  border-color: rgba(255, 126, 95, 0.6);
+}
+
+
+.admin-deliver-map-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: #ff7e5f;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.admin-deliver-map-link:hover {
+  color: #feb47b;
+  text-decoration: underline;
+}
+
+/* Actions */
+.area-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.area-actions button {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.area-actions button:first-child {
+  background: #ff7e5f;
+  color: #fff;
+  border: none;
+}
+
+.area-actions button:first-child:hover {
+  background: #feb47b;
+  color: #2d3436;
+}
+
+.area-actions button:last-child {
+  background: #333;
+  color: #e74c3c;
+  border: 1px solid #444;
+}
+
+.area-actions button:last-child:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* -------- Animations -------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+.deliverable-container::-webkit-scrollbar { width: 8px; }
+.deliverable-container::-webkit-scrollbar-track { background: #1e1e1e; }
+.deliverable-container::-webkit-scrollbar-thumb { background: #444; border-radius: 6px; }
+.deliverable-container::-webkit-scrollbar-thumb:hover { background: #666; }
+
+/* Small screens */
+@media (max-width: 480px) {
+  .area-form { padding: 18px; border-radius: 12px; }
+}

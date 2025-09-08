@@ -1,0 +1,512 @@
+/* 🌸 Background like Home */
+.address-page {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #fff5f0 280px, #ffffff 0);
+  min-height: 50vh;
+}
+
+/* ✨ Gradient Title like Home */
+.address-page h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  letter-spacing: -0.5px;
+
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translate3d(0, -6px, 0);
+  opacity: 0;
+  animation: fadeSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.address-page h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* ➕ Add Address Button */
+.p-add-address-btn {
+  display: block;
+  margin: 0 auto 25px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.p-add-address-btn:hover {
+  background: linear-gradient(135deg, #ff6a3d, #fd9d52);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 118, 84, 0.4);
+}
+
+/* 📋 Address Form */
+.p-address-form {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.p-address-form input,
+.p-address-form select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.p-address-form input:focus,
+.p-address-form select:focus {
+  border-color: #ff7e5f;
+  outline: none;
+  background: #fff;
+}
+
+/* Save button */
+.p-address-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.p-address-form button:hover {
+  background: linear-gradient(135deg, #ff6a3d, #fd9d52);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 118, 84, 0.4);
+}
+
+/* 📦 Address List */
+.p-address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ✨ Address Card Entrance + Hover */
+.p-address-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* Entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeIn 0.5s ease forwards;
+}
+
+.p-address-card:nth-child(1) { animation-delay: 0.05s; }
+.p-address-card:nth-child(2) { animation-delay: 0.1s; }
+.p-address-card:nth-child(3) { animation-delay: 0.15s; }
+.p-address-card:nth-child(4) { animation-delay: 0.2; }
+
+.p-address-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.p-address-card.selected {
+  border: 2px solid #ff7e5f;
+  background: #fff5f0;
+}
+
+/* Address info text */
+.p-address-card p {
+  margin: 6px 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ⭐ Default tag */
+.p-address-card span {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff6a3d;
+}
+
+/* Action buttons */
+.p-address-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.p-address-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Differentiate buttons */
+.p-address-actions button:nth-child(1) {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+}
+
+.p-address-actions button:nth-child(1):hover {
+  background: linear-gradient(135deg, #ff6a3d, #fd9d52);
+  transform: scale(1.05);
+}
+
+.p-address-actions button:nth-child(2) {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.p-address-actions button:nth-child(2):hover {
+  background: #e9e9e9;
+  transform: scale(1.05);
+}
+
+.p-address-actions button:nth-child(3) {
+  background: #ffe5e5;
+  color: #d62828;
+}
+
+.p-address-actions button:nth-child(3):hover {
+  background: #ffc9c9;
+  transform: scale(1.05);
+}
+
+/* 📝 No Address */
+.p-no-address {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #777;
+  margin-top: 20px;
+  padding: 30px 0;
+  background: #fafafa;
+  border: 1px dashed #ddd;
+  border-radius: 12px;
+
+  /* fade in too */
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideIn {
+  from { transform: translate3d(0, -6px, 0); opacity: 0; }
+  to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Remove double-box effect */
+gmpx-place-picker {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: none;
+  padding: 0;
+  overflow: hidden; /* clip inner borders */
+}
+
+/* Style the actual input inside */
+gmpx-place-picker::part(input) {
+  border: none !important;   /* remove Google’s border */
+  outline: none !important;
+  background: transparent;
+  font-size: 0.95rem;
+  font-family: "Poppins";
+  padding: 0 12px;
+  height: 100%;
+  box-shadow: none !important;
+}
+
+/* Remove extra boxy styles */
+gmpx-place-picker::part(container) {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Suggestions dropdown */
+gmpx-place-picker::part(suggestion) {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+gmpx-place-picker::part(suggestion):hover {
+  background: #fff5f0;
+  color: #ff6a3d;
+}
+
+/* Remove last thin border */
+gmpx-place-picker::part(input) {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Add orange glow on focus (like other inputs) */
+gmpx-place-picker:focus-within {
+  border: 1px solid #ff6a3d !important;
+  box-shadow: 0 0 4px rgba(255, 106, 61, 0.5) !important;
+}
+
+/* Remove any leftover inner border + make background match */
+gmpx-place-picker::part(input) {
+  border: none !important;
+  outline: none !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  color: #333 !important;
+}
+
+/* Match focus glow with other inputs */
+gmpx-place-picker:focus-within {
+  border: 1px solid #ff6a3d !important;
+  box-shadow: 0 0 4px rgba(255, 106, 61, 0.5) !important;
+  border-radius: 8px !important;
+}
+
+/* 🌍 Styled Google Maps link (orange theme) */
+.p1-map-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  transition: all 0.25s ease;
+}
+
+.p1-map-link:hover {
+  background: linear-gradient(135deg, #ff6a3d, #fd9d52);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 118, 84, 0.3);
+}
+
+.delete-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.delete-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.delete-modal h3 {
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-cancel {
+  background: #ccc;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 📱 Tablet screens */
+@media (max-width: 768px) {
+  .address-page {
+    padding: 25px 15px;
+  }
+
+  .address-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .p-add-address-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .p-address-form {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .p-address-form input,
+  .p-address-form select {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .p-address-form button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .p-address-card {
+    padding: 14px;
+  }
+
+  .p-address-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Small mobile screens */
+@media (max-width: 480px) {
+
+  .lat-row,
+  .long-row {
+    width: 100%;   /* full width when stacked */
+    max-width: 100%;
+  }
+
+  .address-page {
+    padding: 18px 12px;
+  }
+
+  .address-page h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .p-add-address-btn {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    border-radius: 25px;
+  }
+
+  .p-address-form {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .p-address-form input,
+  .p-address-form select {
+    font-size: 0.85rem;
+    padding: 9px 10px;
+  }
+
+  .p-address-form button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .p-address-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .p-address-card p {
+    font-size: 0.85rem;
+  }
+
+  .p-address-actions {
+    flex-direction: column; /* stack buttons */
+    gap: 8px;
+  }
+
+  .p-address-actions button {
+    font-size: 0.85rem;
+    padding: 9px;
+    border-radius: 20px;
+  }
+
+  .p-no-address {
+    font-size: 0.9rem;
+    padding: 20px 10px;
+  }
+
+  .p1-map-link {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  .delete-modal {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+

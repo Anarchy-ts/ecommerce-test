@@ -1,0 +1,331 @@
+/* 🌟 Orders Page */
+.orders-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+
+  max-height: 80vh;       /* ⬅️ Keep within viewport height */
+  overflow-y: auto;       /* ⬅️ Enable vertical scroll */
+  scrollbar-width: thin;  /* Firefox slim scrollbar */
+  scrollbar-color: #ff7e5f #f1f1f1; /* scrollbar thumb + track */
+}
+
+/* Optional: Chrome/Edge scrollbar styling */
+.orders-page::-webkit-scrollbar {
+  width: 8px;
+}
+.orders-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.orders-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border-radius: 10px;
+}
+.orders-page::-webkit-scrollbar-thumb:hover {
+  background: #ff6a3d;
+}
+
+.orders-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.orders-empty,
+.orders-error,
+.orders-loading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.order-status {
+  font-weight: 600;
+  color: #ff6a3d;
+  background: #ffe1d4;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.order-items {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+/* 🔥 Fixed Alignment for Items */
+.order-item {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 0.5fr 0.6fr; /* product | size | qty | price */
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  column-gap: 10px;
+}
+
+.item-name {
+  font-weight: 600;
+  text-align: left;
+}
+
+.item-size {
+  color: #777;
+  text-align: center;
+}
+
+.item-qty {
+  color: #444;
+  text-align: center;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #222;
+  text-align: right;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.delivery-address {
+  flex: 1;
+  margin-right: 20px;
+  color: #555;
+}
+
+.order-total {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ff6a3d;
+}
+
+/* 🌟 Tracking Section */
+.order-tracking {
+  margin-top: 16px;
+}
+
+.order-tracking h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.tracking-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.tracking-steps::before {
+  content: "";
+  position: absolute;
+  top: 20%;               /* center line vertically */
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background: #eee;
+  z-index: 1;
+  transform: translateY(-50%); /* shift line to true center */
+}
+
+.tracking-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.step-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.step-label {
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+}
+
+/* ✅ Active Step */
+.tracking-step.active .step-dot {
+  background: #ff7e5f;
+  box-shadow: 0 0 10px rgba(255, 126, 95, 0.6);
+}
+
+.tracking-step.active .step-label {
+  color: #ff7e5f;
+  font-weight: 600;
+}
+
+/* 🟢 Completed Step */
+.tracking-step.completed .step-dot {
+  background: #4caf50;
+}
+
+.tracking-step.completed .step-label {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* 🌟 Order Tabs */
+.order-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.order-tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f5f5f5;
+  color: #444;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.order-tab:hover {
+  background: #ffe6dc;
+  color: #ff6a3d;
+}
+
+/* 🔥 Active Tab - matches theme */
+.order-tab.active {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 126, 95, 0.4);
+}
+/* 📍 Map Link Styling */
+.cust-map-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 20px;
+
+  /* Match theme colors */
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+
+  /* Smooth transitions */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cust-map-link:hover {
+  background: #ffe6dc;
+  color: #ff6a3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 106, 61, 0.25);
+}
+
+/* 🌟 Refund Section */
+.order-refunded {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ✅ Full Refund (green theme) */
+.order-refunded.status-refunded {
+  background: #e8f8f1;         /* soft green background */
+  border: 1px solid #b6e2cf;   /* light border */
+  color: #1b7f5a;              /* dark green text */
+}
+
+/* 🟡 Partial Refund (amber theme) */
+.order-refunded.status-partially-refunded {
+  background: #fff8e6;        
+  border: 1px solid #ffe0a3;
+  color: #a46900;
+}
+
+.order-refunded h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.order-refunded .refund-amount {
+  font-weight: 700;
+}
+
+.order-refunded p {
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ✨ Smooth Fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

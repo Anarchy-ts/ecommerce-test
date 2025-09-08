@@ -1,0 +1,207 @@
+/* 🌙 Charges.css - Dark Theme for Charges Admin */
+
+/* Container */
+.charges-admin-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+}
+
+/* Heading */
+.charges-admin-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #feb47b;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Button group */
+.charges-admin-button-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.charges-admin-button {
+  background: #333;
+  color: #feb47b;
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.charges-admin-button:hover {
+  background: #444;
+  color: #fff;
+}
+
+.charges-admin-button.cancel {
+  background: #444;
+  color: #fff;
+}
+
+.charges-admin-button.cancel:hover {
+  background: #666;
+}
+
+.charges-admin-button.delete {
+  background: #b33939;
+  color: white;
+  flex-shrink: 0;   /* 🔑 prevent shrinking */
+  width: 80px;      /* 🔑 fixed width */
+  text-align: center;
+}
+
+.charges-admin-button.delete:hover {
+  background: #ff6b4a;
+  color: #fff;
+}
+
+.charges-admin-button.add {
+  margin-top: 10px;
+  background: #ff7e5f;
+  color: #fff;
+}
+
+.charges-admin-button.add:hover {
+  background: #feb47b;
+  color: #2d3436;
+}
+
+/* Modal Overlay */
+.charges-admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Box */
+.charges-admin-modal {
+  background: #1f1f1f;
+  padding: 24px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  color: #f2f2f2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideUp 0.4s ease;
+}
+
+.charges-admin-modal-title {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ff9966;
+}
+
+/* Labels & Inputs */
+.charges-admin-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #ddd;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.charges-admin-input {
+  padding: 12px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.charges-admin-input:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* Charge Rows */
+.charges-admin-charge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.charges-admin-charge-row input {
+  flex: 1 1 auto;  /* grow + shrink nicely */
+  min-width: 0;    /* 🔑 prevents overflow */
+}
+
+/* Modal Actions */
+.charges-admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Scrollbar Styling */
+.charges-admin-container::-webkit-scrollbar { width: 8px; }
+.charges-admin-container::-webkit-scrollbar-track { background: #1e1e1e; }
+.charges-admin-container::-webkit-scrollbar-thumb { background: #444; border-radius: 6px; }
+.charges-admin-container::-webkit-scrollbar-thumb:hover { background: #666; }
+
+/* Small screens */
+@media (max-width: 480px) {
+  .charges-admin-modal { padding: 20px; }
+  .charges-admin-button-group { flex-direction: column; align-items: stretch; }
+}
+
+/* ❌ Delete Icon Button - Orange Themed */
+.charges-admin-delete-icon {
+  background: transparent;
+  border: 2px solid #ff7b54;   /* orange border */
+  color: #ff7b54;              /* orange text */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;          /* smooth rounded look */
+  padding: 2px 8px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.charges-admin-delete-icon:hover {
+  background: #ff7b54;
+  color: #fff;                 /* white cross on hover */
+  transform: scale(1.1);
+}
+
+

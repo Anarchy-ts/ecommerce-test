@@ -1,0 +1,429 @@
+/* 🌙 CustomerOrders.css - Dark Gradient Theme */
+
+.admin-orders-table-container {
+  max-height: 70vh; /* adjust as needed */
+  overflow-y: auto;
+  overflow-x: auto; /* optional if table gets wider */
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.admin-orders-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #f1f1f1;
+}
+
+/* Heading */
+.admin-orders-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #feb47b;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Error Message */
+.admin-error-message {
+  color: #ff6b6b;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+/* Orders Table */
+.admin-orders-table {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  background: rgba(30, 30, 30, 0.92);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.5s ease;
+}
+
+.admin-orders-table th,
+.admin-orders-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-orders-table th {
+  background: rgba(255, 138, 84, 0.12);
+  font-weight: 600;
+  color: #ff9a5f;
+}
+
+.admin-orders-table tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Update Button */
+.admin-orders-table button {
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.admin-orders-table button:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+.admin-orders-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal */
+.admin-orders-modal {
+  background: rgba(30, 30, 30, 0.95);
+  padding: 24px 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.4s ease;
+}
+
+.admin-orders-modal h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ff9a5f;
+  margin-bottom: 14px;
+}
+
+.admin-orders-modal p {
+  color: #f1f1f1;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.admin-orders-modal select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.admin-orders-modal select:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* Modal Actions */
+.admin-orders-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.admin-orders-modal-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.admin-orders-modal-actions button:first-child {
+  background: #333;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.admin-orders-modal-actions button:first-child:hover {
+  background: #444;
+}
+
+.admin-orders-modal-actions button:last-child {
+  background: #ff7e5f;
+  color: #fff;
+  border: none;
+}
+
+.admin-orders-modal-actions button:last-child:hover {
+  background: #feb47b;
+  color: #2d3436;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔘 Orders Toggle Buttons */
+.orders-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.orders-toggle-buttons button {
+  background: #2d3436;
+  color: #fff;
+  padding: 10px 20px;
+  border: 2px solid #e17055;   /* 🔥 Orange border */
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.orders-toggle-buttons button:hover {
+  background: #e17055;  /* 🔥 Orange hover */
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(225, 112, 85, 0.4);
+}
+
+.orders-toggle-buttons button.active {
+  background: #e17055;  /* 🔥 Active orange */
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(225, 112, 85, 0.6);
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 6px;   /* 👈 adds a little space below address */
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.map-link:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 123, 84, 0.4);
+}
+
+/* 📥 Download Section */
+.download-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.download-section button {
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.download-section button:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 123, 84, 0.5);
+}
+
+/* 📥 Download Modal Inputs */
+.admin-orders-modal label {
+  display: block;
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #f1f1f1;
+}
+
+.admin-orders-modal select,
+.admin-orders-modal input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.admin-orders-modal input[type="date"]:focus,
+.admin-orders-modal select:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* ---------- Fix for inline flex date-pair in Download modal ---------- */
+/* Targets the div that has inline style 'display: "flex"' inside the modal */
+.admin-orders-modal div[style*="display: flex"] {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 12px !important;
+  box-sizing: border-box;
+}
+
+/* Ensure the immediate child columns (Start / End wrappers) behave like flex items */
+.admin-orders-modal div[style*="display: flex"] > div {
+  flex: 1 1 260px;   /* grow, shrink, base (260px) - adjust base if you want them wider */
+  min-width: 0;      /* critical so inputs can shrink (prevents overflow/overlap) */
+  box-sizing: border-box;
+}
+
+/* Make labels inside those divs sit above the inputs and keep spacing */
+.admin-orders-modal div[style*="display: flex"] > div label {
+  display: block;
+  margin-bottom: 6px;
+  color: #f1f1f1;
+  font-size: 0.95rem;
+}
+
+/* Style the date inputs inside modal for consistent sizing */
+.admin-orders-modal div[style*="display: flex"] input[type="date"] {
+  width: 100% !important;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+/* Stack the two fields on very narrow screens */
+@media (max-width: 520px) {
+  .admin-orders-modal div[style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .admin-orders-modal div[style*="display: flex"] > div {
+    flex-basis: 100%;
+  }
+}
+
+/* 💸 Refund Section */
+.refund-section {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.92);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.4s ease;
+}
+
+.refund-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff9a5f; /* 🔥 same orange accent as headings */
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* Refund Buttons */
+.refund-btn {
+  display: inline-block;
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 6px 0;
+}
+
+.refund-btn:hover:not(:disabled) {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 123, 84, 0.4);
+}
+
+.refund-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Toggle button (first Refund) */
+.refund-toggle {
+  width: 100%;
+}
+
+/* Refund options wrapper */
+.refund-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* Partial Refund */
+.partial-refund {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.partial-refund input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+.partial-refund input:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* Partial Refund Button */
+.partial-refund-btn {
+  flex-shrink: 0;
+}

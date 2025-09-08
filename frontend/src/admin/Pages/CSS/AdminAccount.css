@@ -1,0 +1,340 @@
+/* 🌌 Page Container */
+.admin-account-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🪟 Card style */
+.admin-account-card {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  max-width: 700px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
+}
+
+/* ✨ Text */
+.admin-welcome {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #feb47b;
+  margin-bottom: 12px;
+}
+.admin-subtitle {
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  margin-bottom: 30px;
+}
+
+/* 🎛️ Action Buttons */
+.admin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.admin-action-btn {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border: none;
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.25s, background 0.3s, color 0.3s;
+}
+.admin-action-btn:hover {
+  transform: translateY(-2px);
+  background: #feb47b;
+  color: #2d3436;
+  box-shadow: 0 0 12px rgba(255, 126, 95, 0.8), 0 0 24px rgba(255, 180, 123, 0.6);
+}
+.admin-btn-icon { font-size: 1.2rem; }
+
+/* ✅ Message */
+.admin-message {
+  margin-top: 20px;
+  font-weight: 500;
+  color: #ff9a76;
+}
+
+/* ---------------- MODAL ---------------- */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+.admin-modal {
+  background: rgba(40, 40, 40, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: slideUp 0.4s ease;
+}
+.admin-modal h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #feb47b;
+}
+
+/* Inputs */
+.admin-modal input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.admin-modal input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 6px #feb47b;
+}
+
+/* OTP Button */
+.admin-otp-btn {
+  background: #feb47b;
+  color: #2d3436;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.3s, transform 0.2s, opacity 0.3s;
+}
+.admin-otp-btn:hover {
+  background: #ff7e5f;
+  transform: translateY(-2px);
+}
+.admin-otp-btn:disabled {
+  background: #888;
+  color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+
+/* ---------------- OTP Status ---------------- */
+.admin-otp-status {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+.admin-otp-status.sending { color: #f1c40f; }
+.admin-otp-status.success { color: #2ecc71; }
+.admin-otp-status.error { color: #e74c3c; }
+
+/* Modal Actions */
+.admin-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.admin-save-btn, .admin-cancel-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.admin-save-btn {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+}
+.admin-save-btn:hover {
+  background: #feb47b;
+  color: #2d3436;
+}
+.admin-cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.admin-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------- EMAIL UI ENHANCE ------------------- */
+/* 📬 Section Header and Divider */
+.email-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #feb47b;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+.icon-envelope {
+  font-size: 1.1rem;
+  color: #ff7e5f;
+}
+.admin-divider {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b 80%, transparent);
+  border: none;
+  margin-bottom: 16px;
+  opacity: 0.34;
+  border-radius: 2px;
+}
+
+/* 📧 Email List Wrapper */
+.email-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 13px;
+  padding-right: 6px;
+}
+
+/* Stylish email pill / chip */
+.email-input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(40, 40, 40, 0.93);
+  border-radius: 50px;
+  padding: 0px 12px;
+  min-height: 38px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(255,180,123,0.09);
+  border: 1.5px solid #feb47b33;
+  transition: border 0.35s, box-shadow 0.15s, background 0.25s;
+}
+
+
+/* Input inside pill */
+.email-input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 8px;
+  border-radius: 25px;
+  margin-left: 4px;
+  transition: color 0.25s;
+  transform: translateY(6px);
+  /* Remove margin-top/margin-bottom, keep just side margin if used */
+}
+
+.email-input-group:focus-within {
+  background: rgba(255,126,95,0.07);
+  border: 1.5px solid #feb47b;
+}
+
+.email-input-group input::placeholder {
+  color: #ffd7b2aa;
+  opacity: 1;
+  font-style: italic;
+}
+
+/* Delete (X) button */
+.remove-email-btn {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 8px;
+  border-radius: 50%;
+  padding: 2px 6px 2px 2px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.remove-email-btn:hover {
+  color: #fff;
+  background: #ff6b6b;
+  box-shadow: 0 1px 4px #ff6b6b44;
+}
+
+/* ➕ Add Email Button */
+.add-email-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: rgba(255,126,95,0.11);
+  border: 1.5px dashed #feb47b;
+  color: #feb47b;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.03rem;
+  transition: background 0.22s, box-shadow 0.22s, color 0.2s;
+}
+.add-email-btn:hover {
+  background: #feb47b22;
+  color: #ff7e5f;
+  box-shadow: 0 0 10px #feb47b40;
+}
+
+/* Responsive improvements on small screens */
+@media (max-width: 500px) {
+  .admin-modal {
+    padding: 14px 3vw;
+    max-width: 98vw;
+  }
+  .admin-account-card {
+    padding: 18px 3vw;
+  }
+  .admin-actions {
+    gap: 10px;
+  }
+  .add-email-btn {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+  }
+}

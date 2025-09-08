@@ -1,0 +1,70 @@
+:root {
+  --easeOut: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent right-shift on mobile */
+}
+
+.home-container {
+  padding: 40px 10px; /* reduced side padding */
+  background: linear-gradient(to bottom, #fff5f0 300px, #ffffff 0);
+  box-sizing: border-box;
+}
+
+/* ✨ Smooth, GPU-accelerated title entrance */
+.home-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Performance hints */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translate3d(0, -6px, 0);
+  opacity: 0;
+
+  animation: fadeSlideIn 0.45s var(--easeOut) both;
+}
+
+.home-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* Reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .home-title {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeSlideIn {
+  from {
+    transform: translate3d(0, -6px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

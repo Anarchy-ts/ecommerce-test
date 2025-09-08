@@ -1,0 +1,167 @@
+/* AdminLogin.css - Dark Theme Matching Navbar */
+
+.admin-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  /* ✅ Match navbar gradient */
+  background: linear-gradient(135deg, #2d3436, #000000);
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-login form {
+  background: rgba(30, 30, 30, 0.9); /* dark translucent card */
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 380px;
+  animation: fadeInUp 0.6s ease;
+
+  /* glassy effect */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-login h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #feb47b; /* same accent as navbar */
+}
+
+.admin-login input {
+  width: 92%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-login input::placeholder {
+  color: #aaa;
+}
+
+.admin-login input:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 0 6px rgba(255, 123, 84, 0.5);
+}
+
+/* ✅ Login button */
+.admin-login .login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff7e5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+.admin-login .login-btn:hover {
+  background: #feb47b;
+  color: #2d3436;
+  transform: translateY(-2px);
+}
+
+.admin-login .error {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* ✅ Password field with eye toggle */
+.admin-password-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.admin-password-container input {
+  width: 100%;
+  padding: 12px 14px;
+  padding-right: 45px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: #f1f1f1;
+  transition: border 0.3s ease;
+  box-sizing: border-box;
+}
+
+.admin-eye-icon {
+  position: absolute;
+  color: #da8037;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-80%);
+  width: 35px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.admin-eye-icon:hover {
+  opacity: 1;
+}
+
+/* ===== Resend OTP + Timer ===== */
+
+/* Subtle pill timer */
+.timer {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  color: #ffb08a;
+  background: rgba(255, 126, 95, 0.12);
+  border: 1px solid rgba(255, 126, 95, 0.25);
+  border-radius: 999px;
+  text-align: center;
+  user-select: none;
+}
+
+/* Outline-style resend button */
+.admin-resend-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ff7e5f;
+  background: transparent;
+  color: #ff9a5f;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transform: translateY(-8px);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease, border-color 0.25s ease;
+}
+
+.admin-resend-btn:hover {
+  background: rgba(255, 126, 95, 0.15);
+  color: #feb47b;
+  transform: translateY(-0.75px);
+  border-color: #feb47b;
+}

@@ -1,0 +1,33 @@
+.policy-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.policy-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6a3d;
+}
+
+.policy-container h2 {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.policy-container ul {
+  padding-left: 20px;
+}
+
+.policy-container .last-updated {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #777;
+}

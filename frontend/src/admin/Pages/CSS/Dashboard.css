@@ -1,0 +1,222 @@
+/* 🌙 Dashboard.css - Dark Theme Matching Admin Panel */
+.admin-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #f1f1f1;
+  overflow-y: auto;
+}
+
+/* Heading */
+.admin-dashboard h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #feb47b;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.admin-dashboard p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* 🔹 Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+.stat-card h4 {
+  font-size: 1rem;
+  color: #ffb347;
+  margin-bottom: 10px;
+}
+.stat-card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 🔹 Time Filters */
+.time-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+  justify-content: center;
+}
+
+.time-filters button {
+  background: rgba(40, 40, 40, 0.9);
+  border: 1px solid rgba(255, 180, 71, 0.4);
+  color: #ffb347;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-filters button:hover {
+  background: rgba(255, 180, 71, 0.15);
+  border-color: #ffb347;
+}
+
+.time-filters button.active {
+  background: #ffb347;
+  color: #1e1e1e;
+  border-color: #ffb347;
+  font-weight: 600;
+}
+
+/* 🔹 Custom Range Picker */
+.custom-range {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.custom-range .react-datepicker-wrapper {
+  width: 150px;
+}
+
+.custom-range input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 180, 71, 0.5);
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+/* 🔹 Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.chart-container {
+  padding: 25px;
+  border-radius: 16px;
+  background: rgba(25, 25, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(184, 118, 20, 0.2);
+  filter: brightness(1.05);
+}
+.chart-container h3 {
+  font-size: 1.2rem;
+  color: #ffb347;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* 🔹 Chart Tooltips (Orange Theme) */
+.recharts-tooltip-wrapper {
+  background: transparent !important;
+}
+
+.recharts-default-tooltip {
+  background: rgba(30, 30, 30, 0.95) !important;
+  border: 1px solid #ffb347 !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+  color: #fff !important;
+  font-size: 0.85rem !important;
+}
+
+.recharts-tooltip-label {
+  font-weight: 600 !important;
+  color: #ffb347 !important;
+  margin-bottom: 5px !important;
+}
+
+/* 🔹 Chart Legend (Orange Theme) */
+.recharts-legend-wrapper {
+  margin-top: 15px;
+}
+
+.recharts-default-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.recharts-legend-item {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ddd;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.recharts-legend-item:hover {
+  color: #ffb347;
+}
+
+.recharts-legend-item .recharts-symbol {
+  stroke: #ffb347 !important;
+  stroke-width: 2px !important;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-range {
+    flex-direction: column;
+  }
+
+  .custom-range .react-datepicker-wrapper {
+    width: 100%;
+  }
+}
